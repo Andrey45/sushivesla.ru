@@ -1,12 +1,17 @@
-import React from 'react';
+import React, {lazy, Suspense} from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { BrowserRouter} from "react-router-dom";
+import './scss/main.scss';
 import * as serviceWorker from './serviceWorker';
+const App = lazy(() => import('./app/App'))
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <BrowserRouter>
+          <Suspense fallback={<div>lOADING</div>}>
+              <App/>
+          </Suspense>
+      </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
