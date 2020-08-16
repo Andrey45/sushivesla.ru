@@ -1,5 +1,44 @@
 .container-card {
+  overflow: hidden;
+  width: 100%;
   .column{
+    height: calc(100vh - 152px);
+    min-height: 400px;
+    width: 25%;
+    font-weight: bold;
+    color: #fff;
+
+    .card-set{
+      flex-direction: column;
+
+      &:hover{
+        transition: 1s;
+        .imgCard{
+          margin-top: 0;
+        }
+        .title {
+          margin-top: -10%;
+          transition: margin-top 1s;
+        }
+      }
+      .imgCard{
+        width: 90%;
+        height: 60%;
+        margin-top: -10%;
+        transition: margin-top 1s;
+        img{
+          width: 100%;
+        }
+      }
+      .title {
+        font-size: 64px;
+        margin-left: 10%;
+        height: max-content;
+        margin-top: 0;
+        transition: margin-top 1s;
+      }
+    }
 
   }
 }
+
